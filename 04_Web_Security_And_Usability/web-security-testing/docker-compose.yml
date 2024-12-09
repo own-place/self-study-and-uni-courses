@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+    app:
+        build: .
+        container_name: basic-crud
+        volumes:
+            - .:/var/www/html
+        networks:
+            - laravel_network
+        ports:
+            - 8080:80
+        depends_on:
+            - db
+
+    db:
+        build: ./database
+        container_name: mysql
+        environment:
+            MYSQL_DATABASE: security
+            MYSQL_ALLOW_EMPTY_PASSWORD: 1
+        volumes:
+            - mysql-data:/var/lib/mysql
+        networks:
+            - laravel_network
+        ports:
+            - 3306:3306
+
+networks:
+    laravel_network:
+
+volumes:
+    mysql-data:
