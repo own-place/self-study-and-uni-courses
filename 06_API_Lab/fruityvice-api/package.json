@@ -1,0 +1,17 @@
+{
+  "name": "fruityvice",
+  "version": "1.0.0",
+  "main": "fetchFruits.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./style.css -o ./output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  },
+  "description": ""
+}
