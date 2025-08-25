@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用样式-标题段落强调对齐</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"></head>
+<body>
+    <!-- 
+    1. 标题：
+    bootstrap对标题效果进行了修改并覆盖，并提供了.h1-.h6的对应类名，用以给非标题元素设置样式。
+    -->
+    <h1>标题1<small>副标题1</small></h1>
+    <h2>标题2<span class="small">副标题2</span></h2>
+    <div class="h1">你好</div>
+
+    <hr>
+
+    <!-- 
+    2. 段落：
+    <small> / .small：小字号
+    <b> / <strong>：加粗
+    <i> / <em>：斜体
+    .lead：突出强调内容，增大加粗文本，并对其行高及margin作出相应处理 
+    <mark> / .mark：高亮显示
+    <del> / <s> / .text-decoration-line-through：删除线
+    <ins> / <u> / .text-decoration-underline：下划线
+    
+    -->
+    <p class="lead">Lorem <small class=".text-decoration-line-through">ipsum</small> <mark>dolor</mark> sit <b class="text-decoration-underline">amet</b> consectetur <i>adipisicing</i> elit. <em>Nulla</em>, <strong>dolores</strong>?</p>
+    
+    <hr>
+
+    <!--
+    3. 强调：
+    .text-muted：提示，使用浅灰色（#999）
+    .text-primary：主要，使用蓝色（#428bca）
+    .text-success：成功，使用浅绿色（#3c763d）
+    .text-info：通知信息，使用浅蓝色（#31708f）
+    .text-warning：警告，使用黄色（#8a6d3b）
+    .text-danger：危险，使用褐色（#a94442）
+    -->
+    <div class="text-muted">提示效果</div>
+    <div class="text-primary">主要效果</div>
+    <div class="text-success">成功效果</div>
+    <div class="text-info">信息效果</div>
+    <div class="text-warning">警告效果</div>
+    <div class="text-danger">危险效果</div>
+
+    <hr>
+
+    <!--
+    4. 对齐：
+    在css中常使用text-align实现文本的对齐，而bootstrap则通过四个类名控制文本的对齐风格：
+    .text-left：左对齐
+    .text-center：居中对齐
+    .text-end：右对齐
+    .text-justify：两端对齐（bootstrap5移除了text-justify类）
+    -->
+    <div class="text-left">左对齐 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, repellat!</div>
+    <div class="text-center">居中对齐 - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam, unde.</div>
+    <div class="text-end">右对齐 - Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, quas.</div>
+</body>
+</html>
