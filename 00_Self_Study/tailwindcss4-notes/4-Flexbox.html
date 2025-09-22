@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Flexbox</title>
+</head>
+<body class="p-8">
+    <!-- Flexbox -->
+    <div class="mt-10">
+        <h2 class="font-semibold mb-2 text-3xl text-blue-500">Flexbox</h2>
+        <p>Flexbox 是一种一维布局模型，适用于在一个方向上（行或列）分配空间和对齐内容。</p>
+        <p>要使用 Flexbox，只需在父元素上添加 flex 类，然后可以使用各种子类来控制子元素的对齐和分布。</p>
+
+        <!-- flexbox 排列方向：flex-row(水平，默认)、flex-row-reverse(水平反向)、flex-col(垂直)、flex-col-reverse(垂直反向)。 -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/flex-direction">排列</a>
+
+            <h3 class="font-semibold mt-4 mb-2">1. 正方向排列(横)：父元素使用 flex flex-row，子元素使用 basis-1/4 和 basis-2/4。</h3>
+            <div class="flex flex-row bg-gray-300 w-[800px] h-[80px] mt-4">
+                <div class="basis-1/4 bg-red-500 h-[50px] mr-1">01</div>
+                <div class="basis-1/4 bg-orange-500 h-[50px] mr-1">02</div>
+                <div class="basis-2/4 bg-yellow-500 h-[50px] mr-1">03</div>
+            </div>
+
+            <h3 class="font-semibold mt-4 mb-2">2. 反方向排列(横)：父元素使用 flex flex-row-reverse，子元素使用 basis-1/4 和 basis-2/4。</h3>
+            <div class="flex flex-row-reverse bg-gray-300 w-[800px] h-[80px] mt-4">
+                <div class="basis-1/4 bg-red-500 h-[50px] mr-1">01</div>
+                <div class="basis-1/4 bg-orange-500 h-[50px] mr-1">02</div>
+                <div class="basis-2/4 bg-yellow-500 h-[50px] mr-1">03</div>
+            </div>
+
+            <h3 class="font-semibold mt-4 mb-2">3. 正方向排列(竖)：父元素使用 flex flex-col，子元素使用 basis-1/4 和 basis-2/4。</h3>
+            <div class="flex flex-col bg-gray-300 w-[120px] h-[100px] mt-4">
+                <div class="basis-1/4 bg-red-500 w-[100px] mb-1">01</div>
+                <div class="basis-1/4 bg-orange-500 w-[100px] mb-1">02</div>
+                <div class="basis-2/4 bg-yellow-500 w-[100px] mb-1">03</div>
+            </div>
+
+            <h3 class="font-semibold mt-4 mb-2">4. 反方向排列(竖)：父元素使用 flex flex-col-reverse，子元素使用 basis-1/4 和 basis-2/4。</h3>
+            <div class="flex flex-col-reverse bg-gray-300 w-[120px] h-[100px] mt-4">
+                <div class="basis-1/4 bg-red-500 w-[100px] mb-1">01</div>
+                <div class="basis-1/4 bg-orange-500 w-[100px] mb-1">02</div>
+                <div class="basis-2/4 bg-yellow-500 w-[100px] mb-1">03</div>
+            </div>
+        </div>
+
+        <!-- Wrap -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/flex-wrap">Wrap</a>
+            <h3 class="font-semibold mt-4 mb-2">flex-wrap：父容器只有 500px，但每个子元素固定 200px，三个一行就需要 600px → 超出，于是触发换行。h-auto使高度可以随内容变化。</h3>
+            <div class="flex flex-row flex-wrap bg-gray-300 w-[500px] h-auto mt-4">
+                <div class="w-[200px] h-[50px] bg-red-500 mr-1 mb-1">01</div>
+                <div class="w-[200px] h-[50px] bg-orange-500 mr-1 mb-1">02</div>
+                <div class="w-[200px] h-[50px] bg-yellow-500 mr-1 mb-1">03</div>
+            </div>
+        </div>
+
+        <!-- Flex -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/flex">Flex</a>
+            <p>flex-1 尽可能伸展，平均分配剩余空间，flex-auto 根据内容大小，但可伸缩。</p>
+
+            <div class="mb-4">
+            <h2 class="font-semibold mb-2">1. flex-1 均分空间: <span class="text-sm text-gray-600 mt-1">三个子元素会平均分配宽度。</span></h2>
+            <div class="flex bg-gray-200 w-[600px] h-[80px]">
+                <div class="flex-1 bg-red-300 flex items-center justify-center">短</div>
+                <div class="flex-1 bg-blue-300 flex items-center justify-center">中等文字</div>
+                <div class="flex-1 bg-green-300 flex items-center justify-center">很长很长很长的文字</div>
+            </div>
+            </div>
+
+            <div class="mb-4">
+            <h2 class="font-semibold mb-2">2. flex-auto 内容大小，可伸缩: <span class="text-sm text-gray-600 mt-1">宽度基于内容，但会一起缩放，保证不溢出。</span></h2>
+            <div class="flex bg-gray-200 w-[600px] h-[80px]">
+                <div class="flex-auto bg-red-300 flex items-center justify-center">短</div>
+                <div class="flex-auto bg-blue-300 flex items-center justify-center">中等文字</div>
+                <div class="flex-auto bg-green-300 flex items-center justify-center">很长很长很长的文字</div>
+            </div>
+            </div>
+        </div>
+
+        <!-- Order -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/order">排列顺序</a>
+
+            <div class="mb-4">
+            <h2 class="font-semibold mb-2">1. 给子元素排序：01在最后(order-3)， 02在最前(order-1)，03在中间(order-2)</h2>
+            <div class="flex justify-between bg-gray-200 w-[300px] h-[80px]">
+                <div class="order-3 bg-red-300 flex items-center justify-center">01</div>
+                <div class="order-1 bg-blue-300 flex items-center justify-center">02</div>
+                <div class="order-2 bg-green-300 flex items-center justify-center">03</div>
+            </div>
+            </div>
+
+            <div class="mb-4">
+            <h2 class="font-semibold mb-2">1. 给子元素排序：01在最后(order-last)， 02在最前(order-first)，03在中间</h2>
+            <div class="flex justify-between bg-gray-200 w-[300px] h-[80px]">
+                <div class="order-last bg-red-300 flex items-center justify-center">01</div>
+                <div class="order-first bg-blue-300 flex items-center justify-center">02</div>
+                <div class="bg-green-300 flex items-center justify-center">03</div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

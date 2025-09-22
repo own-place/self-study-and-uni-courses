@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tetra's Adventure</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-image: url('./assets/bg.gif');
+            background-size: cover;
+        }
+
+        canvas {
+            display: block;
+            margin: auto;
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        button {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px;
+            font-size: 16px;
+            z-index: 1; /* Ensure button is above canvas */
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="backgroundMusic" loop>
+        <source src="./assets/Sakura-Girl-Daisy-chosic.mp3" type="audio/mp3">
+    </audio>
+
+    <button onclick="playBackgroundMusic()">Play Background Music</button>
+
+    <canvas id="game"></canvas>
+    <script src="build/app.js" type="module"></script>
+
+    <script>
+        function playBackgroundMusic() {
+            var audio = document.getElementById("backgroundMusic");
+            audio.play();
+            // Optionally, you can hide or disable the play button after starting the music.
+            document.querySelector("button").style.display = "none";
+        }
+
+        // Adjust canvas size when the window is resized
+        window.addEventListener('resize', () => {
+            var canvas = document.getElementById("game");
+            CanvasRenderer.setCanvasDimensions(canvas);
+        });
+    </script>
+</body>
+
+</html>

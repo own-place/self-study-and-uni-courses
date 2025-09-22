@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Layout</title>
+</head>
+<body class="p-8">
+    <div>
+        <p>h-screen(整个视口高度)适用于PC端，h-dvh(动态视口高度)适用于移动端。</p>
+        <p>w-和h-后面都可以用数字(w-96)、分数(w-1/2)、full(占满父容器可用宽/高度)、screen(占满整个视口宽/高度)、auto(只包裹内容)，或指定数值(w-[32rem])。</p>
+        <p>除此之外，还有max-w-*和min-w-*、max-h-*和min-h-*设置最大和最小宽/高度，确保在不同屏幕或布局下不影响显示的元素。</p>
+    </div>
+    <div class="w-80 h-24 bg-gray-200">
+        <div class="w-full bg-blue-300">w-full：占满父容器可用宽度</div>
+    </div>
+    <br>
+    <div class="w-80 h-24 bg-gray-200">
+        <div class="w-auto bg-green-300">w-auto：只包裹内容</div>
+    </div>
+    <br>
+    <div class="w-80 h-24 bg-gray-200">
+        <div class="w-screen bg-red-300">w-screen：占满整个视口宽度</div>
+    </div>
+    <br>
+    <div class="w-80 h-24 bg-gray-300">
+        <div class="w-2/3 bg-yellow-300">w-2/3：占满父容器的 2/3 宽度</div>
+    </div>
+    <br>
+    <div>
+        <p>Padding和margin的区别在于，Padding是元素内容与边框之间的空间(向内)，而Margin是元素边框与其他元素之间的空间(向外)。</p>
+        <p>它们都使用相同的设置方法，比如：p-8(四个方向), pl-8(左), pr-8(右), pt-8(上), pb-8(下)，px-8(左右), py-8(上下)；或者用p-[2px]指定数值。</p>
+    </div>
+
+    <div class="mt-10">
+        <div class="text-3xl text-blue-500">背景</div>
+        <div class="mt-2">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/background-attachment">背景附着</a>
+            <p>有三种形式：背景固定在屏幕上；文字移动时背景一起滚动；文字移动时背景不动。</p>
+        </div>
+        <div class="mt-2">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/background-image">背景图像</a>
+            <p>有两种形式：引入图片作为背景，或使用渐变色作为背景。</p>
+        </div>
+        <div class="mt-2">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/background-repeat">背景重复</a>
+            <p>平铺某个图像作为背景。</p>
+        </div>
+        <div class="mt-2">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/background-size">背景尺寸</a>
+            <p>设置背景图像的尺寸：cover(放大到完全适应容器)、contain(放大到适应容器的高/宽)、auto(使用图片默认尺寸)。</p>
+        </div>
+    </div>
+
+    <div class="mt-10">
+        <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/display">显示</a>
+        
+        <h2 class="font-semibold my-2">block 块级元素: <span class="text-sm text-gray-600 mt-1">每个元素独占一整行。</span></h2>
+        <div class="border p-2 bg-blue-100">
+            <span class="block bg-blue-300">我是 block 1</span>
+            <span class="block bg-blue-300">我是 block 2</span>
+            <span class="block bg-blue-300">我是 block 3</span>
+        </div>
+        
+        <h2 class="font-semibold my-2">inline 行内元素: <span class="text-sm text-gray-600 mt-1">元素在一行里显示，不会换行，但无法设置宽高。</span></h2>
+        <div class="border p-2 bg-green-100">
+            <span class="inline bg-green-300">我是 inline 1</span>
+            <span class="inline bg-green-300">我是 inline 2</span>
+            <span class="inline bg-green-300">我是 inline 3</span>
+        </div>
+        
+        <h2 class="font-semibold my-2">inline-block 行内块: <span class="text-sm text-gray-600 mt-1">像 inline 一样在一行，但可设置宽高。</span></h2>
+        <p>inline-block 默认是基线对齐，所以常常出现“不在一条线上”的情况。用 align-top、align-middle、align-bottom 就能控制对齐方式。</p>
+        <div class="border p-2 bg-yellow-100">
+            <span class="inline-block align-top bg-yellow-300 w-24 h-10 text-center">inline-block 11</span>
+            <span class="inline-block align-top bg-yellow-300 w-24 h-10 text-center">inline-block 22</span>
+            <span class="inline-block align-top bg-yellow-300 w-24 h-10 text-center">inline-block 33</span>
+        </div>
+
+        <h2 class="font-semibold mb-2">hidden 隐藏元素: <span class="text-sm text-gray-600 mt-1">hidden 的元素不会渲染，占位也消失。</span></h2>
+        <div class="border p-2 bg-red-100">
+            <span class="bg-red-300">可见 1</span>
+            <span class="hidden bg-red-300">我是 hidden 你看不到我</span>
+            <span class="bg-red-300">可见 2</span>
+        </div>
+    </div>
+</body>
+</html>

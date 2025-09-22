@@ -1,0 +1,53 @@
+name: CI Pipeline
+on:
+  push:
+    branches:
+      - release/deployment-pipeline
+  pull_request:
+    branches:
+      - release/deployment-pipeline
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout the code from the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Use the version that matches your project
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the project
+      - name: Build the app
+        run: npm run build
+
+      - name: Run ESLint
+        run: npm run lint  
+
+      - name: Upload ESLint results 
+        if: failure() 
+        uses: actions/upload-artifact@v3
+        with:
+          name: eslint-results
+          path: eslint-report.json
+
+      # Run tests
+      - name: Run tests
+        run: npm run test
+
+      # Log success message
+      - name: Log success message
+        if: success()
+        run: echo "Building and testing was successful"
+
+
+        

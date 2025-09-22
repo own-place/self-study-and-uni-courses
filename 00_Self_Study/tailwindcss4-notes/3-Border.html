@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Border</title>
+</head>
+<body class="p-8">
+    <div>
+        <a class="text-3xl underline text-blue-500" href="https://tailwindcss.com/docs/border-radius">边框圆角</a>
+        <div class="mt-2">
+            <p>四个角一起设置：</p>
+            <p class="rounded-xs w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-xs</p>
+            <p class="rounded-sm w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-sm</p>
+            <p class="rounded-md w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-md</p>
+            <p class="rounded-lg w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-lg</p>
+            <p class="rounded-xl w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-xl</p>
+            <p class="rounded-2xl w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-2xl</p>
+            <p class="rounded-3xl w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-3xl</p>
+            <p class="rounded-none w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-none</p>
+            <p class="rounded-full w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-full</p>
+        </div>
+        <div class="mt-2">
+            <p>单独设置两个角：(中间参数还可以替换成r, b, l)</p>
+            <p class="rounded-t-lg w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-t-lg(上面的两个角)</p>
+        </div>
+        <div class="mt-2">
+            <p>单独设置一个角：（中间参数还可以替换成tr, bl, br）</p>
+            <p class="rounded-tl-lg w-[150px] h-[55px] bg-blue-300 text-center text-white text-xl mt-2">rounded-tl-lg(左上角)</p>
+        </div>
+        <div class="mt-2">
+            <p>如何角度不满意，可以用rounded-[value]来设置。</p>
+        </div>
+    </div>
+    <div class="mt-8">
+        <p>边的<a class="underline text-green-500" href="https://tailwindcss.com/docs/border-width">厚度</a>、<a class="underline text-green-500" href="https://tailwindcss.com/docs/border-color">颜色</a>、<a class="underline text-green-500" href="https://tailwindcss.com/docs/border-style">样式</a>都可设置，还可以单独设置某一边的。</p>
+        <p>边框外面还有一条outline，它的<a class="underline text-green-500" href="https://tailwindcss.com/docs/outline-width">宽度</a>、<a class="underline text-green-500" href="https://tailwindcss.com/docs/outline-color">颜色</a>、<a class="underline text-green-500" href="https://tailwindcss.com/docs/outline-style">样式</a>以及<a class="underline text-green-500" href="https://tailwindcss.com/docs/outline-offset">偏移</a>边框的距离也是可以设置的。</p>
+    </div>
+</body>
+</html>
