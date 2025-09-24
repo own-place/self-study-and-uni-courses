@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Grid</title>
 </head>
+
 <body class="p-8">
     <div class="mt-10">
         <!-- Grid -->
@@ -16,48 +18,135 @@
 
             <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/grid-template-columns">列</a>
             <div class="mb-4">
-            <h2 class="font-semibold mb-2">在父元素使用grid grid-cols-3 gap-4</h2>
-            <div class="grid grid-cols-3 gap-4 bg-gray-200 w-[300px] h-[80px]">
-                <div class="bg-red-300 flex items-center justify-center">01</div>
-                <div class="bg-blue-300 flex items-center justify-center">02</div>
-                <div class="bg-green-300 flex items-center justify-center">03</div>
-                <div class="bg-orange-300 flex items-center justify-center">04</div>
-                <div class="bg-purple-300 flex items-center justify-center">05</div>
-            </div>
+                <h2 class="font-semibold mb-2">在父元素使用grid grid-cols-3 gap-4</h2>
+                <div class="grid grid-cols-3 gap-4 bg-gray-200 w-[300px] h-[80px]">
+                    <div class="bg-red-300 flex items-center justify-center">01</div>
+                    <div class="bg-blue-300 flex items-center justify-center">02</div>
+                    <div class="bg-green-300 flex items-center justify-center">03</div>
+                    <div class="bg-orange-300 flex items-center justify-center">04</div>
+                    <div class="bg-purple-300 flex items-center justify-center">05</div>
+                </div>
             </div>
 
             <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/grid-column">延展</a>
             <div class="mb-4">
-            <h2 class="font-semibold mb-2">在父元素使用grid grid-cols-3 gap-4，在想延展的子元素上使用col-span-2（代表延展成两格）</h2>
-            <div class="grid grid-cols-3 gap-4 bg-gray-200 w-[300px] h-[80px]">
-                <div class="bg-red-300 flex items-center justify-center">01</div>
-                <div class="bg-blue-300 flex items-center justify-center">02</div>
-                <div class="bg-green-300 flex items-center justify-center">03</div>
-                <div class="col-span-2 bg-orange-300 flex items-center justify-center">04</div>
-                <div class="bg-purple-300 flex items-center justify-center">05</div>
-            </div>
+                <h2 class="font-semibold mb-2">在父元素使用grid grid-cols-3 gap-4，在想延展的子元素上使用col-span-2（代表延展成两格）</h2>
+                <div class="grid grid-cols-3 gap-4 bg-gray-200 w-[300px] h-[80px]">
+                    <div class="bg-red-300 flex items-center justify-center">01</div>
+                    <div class="bg-blue-300 flex items-center justify-center">02</div>
+                    <div class="bg-green-300 flex items-center justify-center">03</div>
+                    <div class="col-span-2 bg-orange-300 flex items-center justify-center">04</div>
+                    <div class="bg-purple-300 flex items-center justify-center">05</div>
+                </div>
 
-            <h2 class="font-semibold mb-2">在父元素使用grid grid-cols-6 gap-4，在想延展的子元素上使用col-span-2（代表延展成两格），在想定义位置的子元素上使用col-start或end</h2>
-            <p>在下面案例中，父元素将容器分成六列，01（col-span-4 col-start-2），02（col-start-1 col-end-3），03（col-span-2 col-end-7），04（col-start-1 col-end-7）</p>
-            <p>col-start-n = 从 第 n 条网格线 开始，col-end-n = 到 第 n 条网格线 结束（但不包含该线本身右边的列）</p>
-            <!-- <p>
+                <h2 class="font-semibold mb-2">在父元素使用grid grid-cols-6
+                    gap-4，在想延展的子元素上使用col-span-2（代表延展成两格），在想定义位置的子元素上使用col-start或end</h2>
+                <p>在下面案例中，父元素将容器分成六列，01（col-span-4 col-start-2），02（col-start-1 col-end-3），03（col-span-2
+                    col-end-7），04（col-start-1 col-end-7）</p>
+                <p>col-start-n = 从 第 n 条网格线 开始，col-end-n = 到 第 n 条网格线 结束（但不包含该线本身右边的列）</p>
+                <!-- <p>
                 | 1 | 2 | 3 | 4 | 5 | 6 |
                 ^   ^   ^   ^   ^   ^   ^
                 1   2   3   4   5   6   7   ← 这是网格线编号
             </p> -->
-            <div class="grid grid-cols-6 gap-4 bg-gray-200 w-[300px] h-[80px]">
-                <div class="col-span-4 col-start-2 bg-red-300 flex items-center justify-center">01</div>
-                <div class="col-start-1 col-end-3 bg-blue-300 flex items-center justify-center">02</div>
-                <div class="col-span-2 col-end-7 bg-green-300 flex items-center justify-center">03</div>
-                <div class="col-start-1 col-end-7 bg-orange-300 flex items-center justify-center">04</div>
-            </div>
+                <div class="grid grid-cols-6 gap-4 bg-gray-200 w-[300px] h-[80px]">
+                    <div class="col-span-4 col-start-2 bg-red-300 flex items-center justify-center">01</div>
+                    <div class="col-start-1 col-end-3 bg-blue-300 flex items-center justify-center">02</div>
+                    <div class="col-span-2 col-end-7 bg-green-300 flex items-center justify-center">03</div>
+                    <div class="col-start-1 col-end-7 bg-orange-300 flex items-center justify-center">04</div>
+                </div>
 
             </div>
 
         </div>
     </div>
+
+    <div class="mt-10">
+        <!-- Grid Row -->
+        <div class="mt-8">
+            <h2 class="font-semibold mb-2 text-3xl text-blue-500">Grid Row</h2>
+            <p>Grid Row 用于控制元素在网格的行方向上的跨度和位置。</p>
+            <p>在父元素设置 <code>grid</code> + <code>grid-rows-n</code>，在子元素上使用
+                <code>row-span</code>、<code>row-start</code>、<code>row-end</code> 来控制。
+            </p>
+
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/grid-template-rows">行</a>
+            <div class="mb-4">
+                <h2 class="font-semibold mb-2">在父元素使用 grid grid-rows-3 gap-4</h2>
+                <div class="grid grid-rows-3 gap-4 bg-gray-200 w-[300px] h-[300px] border-2 border-black">
+                    <div class="bg-red-300 flex items-center justify-center">01</div>
+                    <div class="bg-blue-300 flex items-center justify-center">02</div>
+                    <div class="bg-green-300 flex items-center justify-center">03</div>
+                </div>
+            </div>
+
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/grid-row">延展</a>
+            <div class="mb-4">
+                <h2 class="font-semibold mb-2">在父元素使用 grid grid-rows-3 gap-4，在子元素上使用 row-span-2（代表延展两行）</h2>
+                <div class="grid grid-rows-3 gap-4 bg-gray-200 w-[300px] h-[300px] border-2 border-black">
+                    <div class="bg-red-300 flex items-center justify-center">01</div>
+                    <div class="bg-blue-300 flex items-center justify-center">02</div>
+                    <div class="row-span-2 bg-green-300 flex items-center justify-center">03</div>
+                </div>
+            </div>
+
+            <h2 class="font-semibold mb-2">在父元素使用 grid grid-rows-6 gap-4，结合 row-span, row-start, row-end</h2>
+            <p>01（row-span-3 row-start-2），02（row-start-1 row-end-3），03（row-span-2 row-end-7），04（row-start-1 row-end-7）
+            </p>
+            <p>row-start-n = 从 第 n 条横向网格线 开始，row-end-n = 到 第 n 条横向网格线 结束（不包含该线下边的行）。</p>
+            <div class="grid grid-rows-6 gap-4 bg-gray-200 w-[300px] h-[300px] border-2 border-black">
+                <div class="row-span-3 row-start-2 bg-red-300 flex items-center justify-center">01</div>
+                <div class="row-start-1 row-end-3 bg-blue-300 flex items-center justify-center">02</div>
+                <div class="row-span-2 row-end-7 bg-green-300 flex items-center justify-center">03</div>
+                <div class="row-start-1 row-end-7 bg-orange-300 flex items-center justify-center">04</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-10">
+        <a class="font-semibold mb-2 text-3xl text-blue-500 mt-10 underline"
+            href="https://tailwindcss.com/docs/gap">Gap</a>
+        <p>gap 用于设置网格行和列之间的间距。</p>
+        <p>gap → 行和列的间距都设置。gap-x → 只控制列与列之间的间距（水平间距）。gap-y → 只控制行与行之间的间距（垂直间距）。</p>
+        <!-- gap: 行列间距都 4 -->
+        <div class="mt-4">
+            <p>gap: 行列间距都 4</p>
+            <div class="grid grid-cols-3 gap-4 bg-gray-200 p-2 w-[300px] h-[300px] border-2 border-black">
+                <div class="bg-red-300">1</div>
+                <div class="bg-blue-300">2</div>
+                <div class="bg-green-300">3</div>
+                <div class="bg-orange-300">4</div>
+                <div class="bg-purple-300">5</div>
+            </div>
+        </div>
+
+        <!-- gap-x: 只有横向间距 -->
+        <div class="mt-4">
+            <p>gap-x: 只有横向间距为 4</p>
+            <div class="grid grid-cols-3 gap-x-4 bg-gray-200 p-2 mt-4 w-[300px] h-[300px] border-2 border-black">
+                <div class="bg-red-300">1</div>
+                <div class="bg-blue-300">2</div>
+                <div class="bg-green-300">3</div>
+                <div class="bg-orange-300">4</div>
+                <div class="bg-purple-300">5</div>
+            </div>
+        </div>
+
+        <!-- gap-y: 只有纵向间距 -->
+        <div class="mt-4">
+            <p>gap-y: 只有纵向间距为 4</p>
+            <div class="grid grid-cols-3 gap-y-4 bg-gray-200 p-2 mt-4 w-[300px] h-[300px] border-2 border-black">
+                <div class="bg-red-300">1</div>
+                <div class="bg-blue-300">2</div>
+                <div class="bg-green-300">3</div>
+                <div class="bg-orange-300">4</div>
+                <div class="bg-purple-300">5</div>
+            </div>
+        </div>
+
+    </div>
+
+
 </body>
+
 </html>
-
-
-

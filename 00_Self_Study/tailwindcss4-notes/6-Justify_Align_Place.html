@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>对齐</title>
+</head>
+
+<body class="p-8">
+    <!-- 对齐 -->
+    <div class="mt-10">
+        <h2 class="font-semibold mb-2 text-3xl text-blue-500">Flexbox & Grid 对齐</h2>
+        <p>
+            在 flex 里，主轴可能是水平（默认 flex-row）也可能是垂直（flex-col），所以 justify-* 控制的对齐其实是跟着 主轴方向变化的，不一定总是水平。在 grid 里，justify-*
+            就是控制水平方向，align-* 就是控制垂直方向。
+        </p>
+
+        <!-- justify -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/justify-content">justify-*</a>
+
+            <h3 class="font-semibold mt-4 mb-2">1. flex-row 下：justify-center → 横向居中</h3>
+            <div class="flex flex-row justify-center bg-gray-200 w-[400px] h-[80px]">
+                <div class="bg-red-300 w-[60px] h-[40px]">A</div>
+            </div>
+
+            <h3 class="font-semibold mt-4 mb-2">2. flex-col 下：justify-center → 竖向居中</h3>
+            <div class="flex flex-col justify-center bg-gray-200 w-[100px] h-[150px]">
+                <div class="bg-blue-300 w-[60px] h-[40px]">B</div>
+            </div>
+        </div>
+
+        <!-- align -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/align-items">align-*</a>
+
+            <h3 class="font-semibold mt-4 mb-2">1. items-start: 竖向排列时 → 顶部对齐</h3>
+            <div class="flex items-start bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[40px]">A</div>
+                <div class="bg-blue-300 w-[60px] h-[70px]">B</div>
+            </div>
+
+            <h3 class="font-semibold mt-4 mb-2">2. items-center: 竖向排列时 → 垂直居中</h3>
+            <div class="flex items-center bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[40px]">A</div>
+                <div class="bg-blue-300 w-[60px] h-[70px]">B</div>
+            </div>
+        </div>
+
+        <!-- place -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/place-content">place-*</a>
+
+            <h3 class="font-semibold mt-4 mb-2">1. place-items-center: 横向 + 竖向 居中</h3>
+            <div class="grid place-items-center bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-green-300 w-[60px] h-[40px]">C</div>
+            </div>
+
+            <h3 class="font-semibold mt-4 mb-2">2. place-items-start: 横向 + 竖向 都在起始位置</h3>
+            <div class="grid place-items-start bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-green-300 w-[60px] h-[40px]">C</div>
+            </div>
+
+        </div>
+
+        <!-- 表格 -->
+        <div class="mt-8">
+            <h2 class="font-semibold mb-2 text-2xl text-blue-500">对齐方式对比</h2>
+            <table class="border border-gray-400 text-center">
+                <thead class="bg-gray-300">
+                    <tr>
+                        <th class="border border-gray-400 px-2 py-1">方式</th>
+                        <th class="border border-gray-400 px-2 py-1">Flex (横向 row)</th>
+                        <th class="border border-gray-400 px-2 py-1">Flex (竖向 col)</th>
+                        <th class="border border-gray-400 px-2 py-1">Grid</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border border-gray-400 px-2 py-1">justify-*</td>
+                        <td class="border border-gray-400 px-2 py-1">控制横向</td>
+                        <td class="border border-gray-400 px-2 py-1">控制竖向</td>
+                        <td class="border border-gray-400 px-2 py-1">控制横向</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 px-2 py-1">align-*</td>
+                        <td class="border border-gray-400 px-2 py-1">控制竖向</td>
+                        <td class="border border-gray-400 px-2 py-1">控制横向</td>
+                        <td class="border border-gray-400 px-2 py-1">控制竖向</td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-400 px-2 py-1">place-*</td>
+                        <td class="border border-gray-400 px-2 py-1">同时控制横向+竖向</td>
+                        <td class="border border-gray-400 px-2 py-1">同时控制横向+竖向</td>
+                        <td class="border border-gray-400 px-2 py-1">同时控制横向+竖向</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- items 和 self -->
+    <div class="mt-12">
+        <h2 class="font-semibold mb-2 text-2xl text-blue-500">items-* 和 self-* 对齐</h2>
+        <p class="mb-4">
+            除了控制整个容器的对齐（justify-*, align-*, place-*），还可以控制
+            <span class="font-semibold">子元素的对齐方式</span>：<br>
+            - <span class="text-blue-500">items-*</span>：控制容器里所有子项。<br>
+            - <span class="text-blue-500">self-*</span>：控制单个子项（会覆盖父级的 items-* 设置）。
+        </p>
+
+        <!-- justify-items -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400"
+                href="https://tailwindcss.com/docs/justify-items">justify-items-*</a>
+
+            <h3 class="font-semibold mt-4 mb-2">1. grid justify-items-center → 子项水平居中</h3>
+            <div class="grid grid-cols-3 justify-items-center bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[40px]">A</div>
+                <div class="bg-blue-300 w-[60px] h-[40px]">B</div>
+                <div class="bg-green-300 w-[60px] h-[40px]">C</div>
+            </div>
+
+            <h3 class="font-semibold mt-4 mb-2">2. grid justify-items-end → 子项水平靠右</h3>
+            <div class="grid grid-cols-3 justify-items-end bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[40px]">A</div>
+                <div class="bg-blue-300 w-[60px] h-[40px]">B</div>
+                <div class="bg-green-300 w-[60px] h-[40px]">C</div>
+            </div>
+        </div>
+
+        <!-- justify-self -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400"
+                href="https://tailwindcss.com/docs/justify-self">justify-self-*</a>
+
+            <h3 class="font-semibold mt-4 mb-2">1. justify-items-center，某个子项单独 justify-self-end</h3>
+            <div class="grid grid-cols-3 justify-items-center bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[40px]">A</div>
+                <div class="bg-blue-300 w-[60px] h-[40px] justify-self-end">B</div>
+                <div class="bg-green-300 w-[60px] h-[40px]">C</div>
+            </div>
+        </div>
+
+        <!-- align-items -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/align-items">align-items-*</a>
+
+            <h3 class="font-semibold mt-4 mb-2">1. grid align-items-start → 子项顶部对齐</h3>
+            <div class="grid grid-cols-3 align-items-start bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[60px]">A</div>
+                <div class="bg-blue-300 w-[60px] h-[60px]">B</div>
+                <div class="bg-green-300 w-[60px] h-[60px]">C</div>
+            </div>
+
+            <h3 class="font-semibold mt-4 mb-2">2. grid items-center → 子项垂直居中</h3>
+            <div class="grid grid-cols-3 items-center bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[60px]">A</div>
+                <div class="bg-blue-300 w-[60px] h-[60px]">B</div>
+                <div class="bg-green-300 w-[60px] h-[60px]">C</div>
+            </div>
+        </div>
+
+        <!-- align-self -->
+        <div class="mt-8">
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/align-self">align-self-*</a>
+
+            <h3 class="font-semibold mt-4 mb-2">1. items-center，某个子项单独 align-self-end</h3>
+            <div class="grid grid-cols-3 items-center bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[60px]">A</div>
+                <div class="self-end bg-blue-300 w-[60px] h-[60px]">B</div>
+                <div class="bg-green-300 w-[60px] h-[60px]">C</div>
+            </div>
+        </div>
+
+        <div class="mt-8">
+            <!-- place-items -->
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/place-items">place-items-*</a>
+            <h3 class="font-semibold mt-4 mb-2">place-items 所有子项都居中</h3>
+            <div class="grid grid-cols-3 place-items-center bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[40px]">A</div>
+                <div class="bg-blue-300 w-[60px] h-[40px]">B</div>
+                <div class="bg-green-300 w-[60px] h-[40px]">C</div>
+            </div>
+
+            <!-- place-self -->
+            <a class="text-xl underline text-blue-400" href="https://tailwindcss.com/docs/place-self">place-self-*</a>
+            <h3 class="font-semibold mt-4 mb-2">place-self 父容器默认左上对齐，但 A 被 place-self-center 覆盖 → 水平+竖直都居中。</h3>
+            <div class="grid grid-cols-3 place-items-start bg-gray-200 w-[400px] h-[100px]">
+                <div class="bg-red-300 w-[60px] h-[40px] place-self-center">A</div>
+                <div class="bg-blue-300 w-[60px] h-[40px]">B</div>
+                <div class="bg-green-300 w-[60px] h-[40px]">C</div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
